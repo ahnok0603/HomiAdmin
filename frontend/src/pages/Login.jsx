@@ -80,7 +80,6 @@ const Login = () => {
         <div className="login-card">
           <div className="login-header">
             <h2>HOMI<span>ADMIN</span></h2>
-            <p>Enter administrative credentials to access your dashboard</p>
           </div>
 
           <form onSubmit={handleLogin} className="login-form">
@@ -139,10 +138,6 @@ const Login = () => {
               {loading ? 'Authenticating...' : 'Sign In'}
             </button>
           </form>
-
-          <div className="login-footer-info">
-            <p>Demo accounts: <strong>admin@homi.com</strong> / <strong>admin123</strong></p>
-          </div>
         </div>
       </div>
 
