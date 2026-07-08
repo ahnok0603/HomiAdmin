@@ -71,10 +71,10 @@ const Orders = () => {
     }
   };
 
-  const printInvoice = (orderId) => {
-    // Open the print layout API directly in a new window/tab
-    const printUrl = `http://localhost:5000/api/orders/${orderId}/invoice`;
-    window.open(printUrl, '_blank');
+  const getPrintUrl = (orderId) => {
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+    const baseUrl = apiUrl.endsWith('/') ? apiUrl.slice(0, -1) : apiUrl;
+    return `${baseUrl}/orders/${orderId}/invoice`;
   };
 
   const handleExportCSV = () => {
@@ -190,9 +190,16 @@ const Orders = () => {
                 <button className="btn-icon text-primary" onClick={() => viewOrderDetails(order)} title="View Detail">
                   <MdVisibility />
                 </button>
-                <button className="btn-icon text-primary" onClick={() => printInvoice(order.id)} title="Print Invoice">
+                <a 
+                  className="btn-icon text-primary" 
+                  href={getPrintUrl(order.id)} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  title="Print Invoice"
+                  style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
+                >
                   <MdPrint />
-                </button>
+                </a>
               </div>
             </td>
           </tr>
@@ -275,12 +282,18 @@ const Orders = () => {
               </div>
             </div>
 
-            <div className="modal-actions-row">
-              <button className="btn btn-secondary" onClick={() => setIsDetailOpen(false)}>Close</button>
-              <button className="btn btn-primary" onClick={() => printInvoice(selectedOrder.id)}>
-                <MdPrint /> Print Invoice
-              </button>
-            </div>
+              <div className="modal-actions-row">
+                <button className="btn btn-secondary" onClick={() => setIsDetailOpen(false)}>Close</button>
+                <a 
+                  className="btn btn-primary" 
+                  href={getPrintUrl(selectedOrder.id)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}
+                >
+                  <MdPrint /> Print Invoice
+                </a>
+              </div>
           </div>
         )}
       </Modal>
