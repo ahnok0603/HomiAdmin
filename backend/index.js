@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 5000;
 
 // Enable CORS for frontend port (Vite default is 5173 or others)
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://127.0.0.1:5173', 'http://localhost:3000'],
+  origin: true, // Allow any origin in production (Vercel domain is dynamic)
   credentials: true
 }));
 
@@ -25,12 +25,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // Express Session for simple cookie-based auth session management
+const isProduction = process.env.NODE_ENV === 'production';
+app.set('trust proxy', 1); // Trust first proxy (Render)
 app.use(session({
   secret: process.env.SESSION_SECRET || 'homi-admin-secret-key-12345',
   resave: false,
   saveUninitialized: false,
   cookie: {
-    secure: false, // Set to true if using HTTPS
+    secure: isProduction, // Set to true if using HTTPS (Render)
+    sameSite: isProduction ? 'none' : 'lax', // Required for cross-site cookies
     httpOnly: true,
     maxAge: 24 * 60 * 60 * 1000 // 24 hours
   }
