@@ -78,7 +78,7 @@ const Orders = () => {
   };
 
   const tableHeaders = [
-    { label: 'Order ID', width: '130px' },
+    { label: 'Order ID', width: '150px' },
     { label: 'Customer' },
     { label: 'Order Date', width: '130px' },
     { label: 'Total Price', width: '120px', align: 'right' },
@@ -132,12 +132,12 @@ const Orders = () => {
         renderRow={(order) => (
           <tr key={order.id}>
             <td>
-              <span className="order-id-lbl">INV-{order.id.toUpperCase().substring(0, 8)}</span>
+              <span className="order-id-lbl" style={{ whiteSpace: 'nowrap' }}>INV-{order.id.toUpperCase().substring(0, 8)}</span>
             </td>
             <td>
-              <div className="prod-name-cell">
-                <strong>{order.customerName}</strong>
-                <span>{order.customerEmail}</span>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <strong style={{ color: 'var(--text-primary)' }}>{order.customerName}</strong>
+                <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>{order.customerEmail}</span>
               </div>
             </td>
             <td>{new Date(order.orderDate).toLocaleDateString()}</td>

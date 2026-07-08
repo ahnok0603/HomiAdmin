@@ -128,11 +128,19 @@ const Sidebar = ({ isOpen }) => {
           font-size: 14px;
           font-weight: 600;
           color: var(--text-primary);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 140px;
         }
 
         .user-info p {
           font-size: 11px;
           color: var(--text-muted);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 140px;
         }
 
         .sidebar-menu {
