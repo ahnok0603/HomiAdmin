@@ -77,6 +77,34 @@ const Orders = () => {
     window.open(printUrl, '_blank');
   };
 
+  const handleExportCSV = () => {
+    const headers = ['Order ID', 'Customer Name', 'Customer Email', 'Order Date', 'Total Price', 'Payment', 'Status'];
+    const csvRows = [headers.join(',')];
+    
+    orders.forEach(order => {
+      const row = [
+        `INV-${order.id.toUpperCase().substring(0, 8)}`,
+        `"${order.customerName || ''}"`,
+        `"${order.customerEmail || ''}"`,
+        new Date(order.orderDate).toLocaleDateString(),
+        order.totalPrice || 0,
+        order.paymentMethod || 'N/A',
+        order.status || 'Pending'
+      ];
+      csvRows.push(row.join(','));
+    });
+    
+    const csvString = csvRows.join('\n');
+    const blob = new Blob([csvString], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `orders_export_${new Date().getTime()}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+    showToast('Orders exported successfully!', 'success');
+  };
+
   const tableHeaders = [
     { label: 'Order ID', width: '150px' },
     { label: 'Customer' },
@@ -95,8 +123,8 @@ const Orders = () => {
         </div>
       )}
 
-      <div className="action-bar-container">
-        <form onSubmit={handleSearchSubmit} className="search-bar-form">
+      <div className="action-bar-container" style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '15px' }}>
+        <form onSubmit={handleSearchSubmit} className="search-bar-form" style={{ flexGrow: 1 }}>
           <div className="search-input-wrapper">
             <MdSearch className="search-icon" />
             <input 
@@ -109,7 +137,7 @@ const Orders = () => {
           <button type="submit" className="btn btn-secondary">Search</button>
         </form>
 
-        <div className="filter-group-wrapper">
+        <div className="filter-group-wrapper" style={{ display: 'flex', gap: '10px' }}>
           <select 
             value={statusFilter} 
             onChange={(e) => setStatusFilter(e.target.value)}
@@ -122,6 +150,7 @@ const Orders = () => {
             <option value="Delivered">Delivered</option>
             <option value="Cancelled">Cancelled</option>
           </select>
+          <button className="btn btn-primary" onClick={handleExportCSV}>Export CSV</button>
         </div>
       </div>
 

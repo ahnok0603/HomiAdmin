@@ -102,6 +102,34 @@ const Users = () => {
     }
   };
 
+  const handleExportCSV = () => {
+    const headers = ['User ID', 'Name', 'Email', 'Phone', 'Tier', 'Joined', 'Status'];
+    const csvRows = [headers.join(',')];
+    
+    users.forEach(user => {
+      const row = [
+        user.id,
+        `"${user.name || ''}"`,
+        `"${user.email || ''}"`,
+        `"${user.phone || ''}"`,
+        user.membershipTier || 'Silver',
+        user.createdDate ? new Date(user.createdDate).toLocaleDateString() : 'N/A',
+        user.status || 'active'
+      ];
+      csvRows.push(row.join(','));
+    });
+    
+    const csvString = csvRows.join('\n');
+    const blob = new Blob([csvString], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `users_export_${new Date().getTime()}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+    showToast('Data exported successfully!', 'success');
+  };
+
   const tableHeaders = [
     { label: 'User Details' },
     { label: 'Phone', width: '150px' },
@@ -119,8 +147,8 @@ const Users = () => {
         </div>
       )}
 
-      <div className="action-bar-container">
-        <form onSubmit={handleSearchSubmit} className="search-bar-form">
+      <div className="action-bar-container" style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '15px' }}>
+        <form onSubmit={handleSearchSubmit} className="search-bar-form" style={{ flexGrow: 1 }}>
           <div className="search-input-wrapper">
             <MdSearch className="search-icon" />
             <input 
@@ -132,6 +160,7 @@ const Users = () => {
           </div>
           <button type="submit" className="btn btn-secondary">Search</button>
         </form>
+        <button className="btn btn-primary" onClick={handleExportCSV}>Export CSV</button>
       </div>
 
       <DataTable
