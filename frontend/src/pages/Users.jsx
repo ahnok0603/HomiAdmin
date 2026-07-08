@@ -103,9 +103,7 @@ const Users = () => {
   };
 
   const tableHeaders = [
-    { label: 'Avatar', width: '70px' },
-    { label: 'Name' },
-    { label: 'Email' },
+    { label: 'User Details' },
     { label: 'Phone', width: '150px' },
     { label: 'Tier', width: '120px' },
     { label: 'Joined', width: '130px' },
@@ -143,10 +141,14 @@ const Users = () => {
         renderRow={(user) => (
           <tr key={user.id}>
             <td>
-              <img src={user.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80'} alt={user.name} className="table-avatar" />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+                <img src={user.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80'} alt={user.name} className="table-avatar" />
+                <div>
+                  <div style={{ fontWeight: '600', color: 'var(--text-primary)', fontSize: '14px', marginBottom: '4px' }}>{user.name}</div>
+                  <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>{user.email}</div>
+                </div>
+              </div>
             </td>
-            <td><strong>{user.name}</strong></td>
-            <td>{user.email}</td>
             <td>{user.phone || 'N/A'}</td>
             <td>
               <span className="badge badge-info" style={{ textTransform: 'none' }}>
@@ -269,11 +271,12 @@ const Users = () => {
 
       <style>{`
         .table-avatar {
-          width: 36px;
-          height: 36px;
+          width: 42px;
+          height: 42px;
           border-radius: 50%;
           object-fit: cover;
           border: 1px solid var(--border-color);
+          flex-shrink: 0;
         }
 
         .user-header-profile {
