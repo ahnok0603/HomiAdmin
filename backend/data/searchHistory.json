@@ -1,0 +1,18 @@
+[
+  {
+    "id": "sh_1",
+    "uploadedImage": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=200&q=80",
+    "recommendedProducts": [
+      {
+        "id": "prod_nordic_sofa",
+        "name": "Nordic Velvet Sofa"
+      },
+      {
+        "id": "prod_lounge_chair",
+        "name": "Classic Leather Lounge Chair"
+      }
+    ],
+    "userName": "Alex Johnson",
+    "searchTime": "2026-07-08T10:45:00Z"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "website_settings",
+    "companyName": "Homi Furniture",
+    "logo": "/logo.png",
+    "contactInfo": "123 Luxury Avenue, Design District",
+    "email": "contact@homi.com",
+    "phone": "+1 (555) 019-2834",
+    "socialLinks": {
+      "facebook": "https://facebook.com/homi",
+      "instagram": "https://instagram.com/homi",
+      "twitter": "https://twitter.com/homi"
+    },
+    "about": "Homi is an AI-powered premium furniture shopping experience designed to match stunning aesthetics with smart spatial intelligence.",
+    "privacyPolicy": "Your privacy is important to us. We secure your details and never sell them to third parties.",
+    "terms": "Standard terms of service apply. Deliveries take 3-7 business days depending on room selection."
+  }
+]

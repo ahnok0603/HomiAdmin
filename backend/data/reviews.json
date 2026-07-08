@@ -1,0 +1,20 @@
+[
+  {
+    "id": "rev_1",
+    "productName": "Nordic Velvet Sofa",
+    "productId": "prod_nordic_sofa",
+    "userName": "Alex Johnson",
+    "rating": 5,
+    "comment": "Absolutely stunning! The velvet feels incredible and it is very comfortable. Super fast shipping too.",
+    "createdDate": "2026-07-02T11:00:00Z"
+  },
+  {
+    "id": "rev_2",
+    "productName": "Minimalist Oak Dining Table",
+    "productId": "prod_dining_table",
+    "userName": "Sophia Smith",
+    "rating": 4,
+    "comment": "Very solid and beautiful oak table. Setup was easy. Highly recommend.",
+    "createdDate": "2026-06-28T09:30:00Z"
+  }
+]

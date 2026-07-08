@@ -1,0 +1,75 @@
+[
+  {
+    "id": "prod_nordic_sofa",
+    "name": "Nordic Velvet Sofa",
+    "description": "A premium 3-seater sofa with high-density foam and solid oak legs. Upholstered in spill-resistant velvet.",
+    "category": "Living Room",
+    "price": 899,
+    "discount": 10,
+    "quantity": 15,
+    "images": [
+      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1484101403633-562f891dc89a?auto=format&fit=crop&w=800&q=80"
+    ],
+    "material": "Velvet, Oak wood",
+    "color": "Forest Green",
+    "dimensions": "220cm x 90cm x 85cm",
+    "rating": 4.8,
+    "status": "active",
+    "featured": true
+  },
+  {
+    "id": "prod_lounge_chair",
+    "name": "Classic Leather Lounge Chair",
+    "description": "Ergonomic lounge chair with matching ottoman. Made with top-grain leather and molded walnut plywood.",
+    "category": "Living Room",
+    "price": 1299,
+    "discount": 0,
+    "quantity": 5,
+    "images": [
+      "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=800&q=80"
+    ],
+    "material": "Leather, Walnut wood",
+    "color": "Caramel Brown",
+    "dimensions": "85cm x 85cm x 80cm",
+    "rating": 4.9,
+    "status": "active",
+    "featured": true
+  },
+  {
+    "id": "prod_dining_table",
+    "name": "Minimalist Oak Dining Table",
+    "description": "Spacious dining table that fits up to 6 people. Clean lines and solid white oak construction.",
+    "category": "Dining Room",
+    "price": 649,
+    "discount": 5,
+    "quantity": 3,
+    "images": [
+      "https://images.unsplash.com/photo-1617806118233-18e1db207f62?auto=format&fit=crop&w=800&q=80"
+    ],
+    "material": "Oak wood",
+    "color": "Natural Oak",
+    "dimensions": "180cm x 90cm x 75cm",
+    "rating": 4.5,
+    "status": "active",
+    "featured": false
+  },
+  {
+    "id": "prod_office_desk",
+    "name": "Apex Standing Desk",
+    "description": "Electric height adjustable desk with memory preset keys. Perfect for health-conscious smart offices.",
+    "category": "Office",
+    "price": 499,
+    "discount": 0,
+    "quantity": 2,
+    "images": [
+      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80"
+    ],
+    "material": "Steel, Bamboo",
+    "color": "White/Bamboo",
+    "dimensions": "140cm x 70cm x 65-125cm",
+    "rating": 4.7,
+    "status": "active",
+    "featured": false
+  }
+]

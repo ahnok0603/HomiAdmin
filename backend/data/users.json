@@ -1,0 +1,35 @@
+[
+  {
+    "id": "user_1",
+    "name": "Alex Johnson",
+    "email": "alex@example.com",
+    "phone": "+1 (555) 012-3456",
+    "address": "742 Evergreen Terrace, Springfield",
+    "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80",
+    "membershipTier": "Gold",
+    "createdDate": "2026-01-15T08:30:00Z",
+    "status": "active"
+  },
+  {
+    "id": "user_2",
+    "name": "Sophia Smith",
+    "email": "sophia@example.com",
+    "phone": "+1 (555) 098-7654",
+    "address": "10 Downing Street, London",
+    "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80",
+    "membershipTier": "Platinum",
+    "createdDate": "2026-02-10T14:45:00Z",
+    "status": "active"
+  },
+  {
+    "id": "user_3",
+    "name": "Michael Brown",
+    "email": "michael@example.com",
+    "phone": "+1 (555) 045-6789",
+    "address": "456 Oak Lane, Seattle",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
+    "membershipTier": "Silver",
+    "createdDate": "2026-03-01T10:15:00Z",
+    "status": "locked"
+  }
+]

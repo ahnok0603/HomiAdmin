@@ -1,0 +1,28 @@
+{
+  "name": "my-server",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Homi",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "sync-db": "node scripts/syncToFirestore.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^2.3.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-fileupload": "^1.5.2",
+    "express-session": "^1.19.0",
+    "firebase-admin": "^14.1.0"
+  },
+  "devDependencies": {
+    "morgan": "^1.11.0",
+    "nodemon": "^3.1.14"
+  }
+}

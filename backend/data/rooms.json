@@ -1,0 +1,13 @@
+[
+  {
+    "id": "room_nordic_living",
+    "name": "Nordic Sanctuary Living Room",
+    "coverImage": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80",
+    "description": "A cozy, clean Scandinavian living room setup highlighting natural oak tones and lush forest green accents.",
+    "products": [
+      "prod_nordic_sofa",
+      "prod_lounge_chair"
+    ],
+    "totalPrice": 2198
+  }
+]
